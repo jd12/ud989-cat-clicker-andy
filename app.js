@@ -1,13 +1,16 @@
+// variables to store attributes of app
+var cats = $(".cat"); // stores all the objects with class of cat
+var buttons = $("button"); // stores all the objects with id of button
 
-var cats = $(".cat");
-var buttons = $("button");
-
+// goes through cats and hides each of them
 function hideAllCats(){
 	for (var i=0; i<cats.length; i++){
 		$(cats[i]).hide();
 	}
 }
 
+// when you click on the button associated with the cat
+// the cat picture will show
 function bindButtonToCat(idNumber){
 	$("#button"+idNumber).click(function(){
 		hideAllCats();
@@ -15,6 +18,8 @@ function bindButtonToCat(idNumber){
 	})
 }
 
+// when you click on the button associated with the cat
+// the cat counter will increase and display does not work
 function bindCounterToCat(idNumber){
 	var cat = "#cat"+idNumber
 	$(cat).click(function(){

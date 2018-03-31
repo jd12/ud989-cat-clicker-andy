@@ -35,3 +35,37 @@ var model = {
     }
   ]
 };
+
+/* ===== Octupus ===== */
+
+var octupus = {
+
+  init: function() {
+    // set currentCat to the first one in the list
+    model.currentCat = model.cats[0];
+
+    // initialize views
+    catListView.init();
+    catView.init();
+  },
+
+  getCats: function() {
+    return model.cats;
+  },
+
+  // update the currentCat to the object passed in
+  setCurrentCat: function(cat) {
+    model.currentCat = cat;
+  },
+
+  getCurrentCat: function() {
+    return model.currentCat;
+  },
+
+  // increment the counter for the currentCat
+  incrementCounter: function() {
+    model.currentCat.clickCount++;
+    catView.render();
+  }
+
+};
